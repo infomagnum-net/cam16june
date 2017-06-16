@@ -1,0 +1,67 @@
+{%extends "main.html"%}
+{%load static%}
+{%block content%}
+{%include "header.html"%}
+    
+    <body>
+       
+        <section id="main">
+           
+        
+            <section id="content">
+                <div class="container">
+                    <div class="block-header">
+                         <h2>UnTrained Photos <small>UnTrained Photos</small></h2>
+                 
+                       
+                 
+                     </div>
+                 
+                     <div class="card">
+                         <div class="lv-header-alt clearfix">
+                            <h2 class="lvh-label hidden-xs">UnTrained Photos</h2>
+                            
+                            <div class="lvh-search">
+                                <input type="text" placeholder="Start typing..." class="lvhs-input">
+            
+                                <i class="lvh-search-close">&times;</i>
+                            </div>
+                            
+                            
+                        </div>
+                 
+                         <div class="card-body card-padding">                     
+                             <div class="lightbox photos">
+                                {%if data%}
+                                {%for user in data %}
+                                 
+                                 <div data-src="{{user.image}}" class="col-md-2 col-sm-4 col-xs-6 thumbnail">
+                                     <div class="lightbox-item p-item">
+                                         <img src="{{user.image}}" alt="" />
+                                         <h4>{{user.created_at}}</h4>
+                                     </div>
+                                 </div>
+                                 
+                                {%endfor%}
+                                {%else%}
+                                <div class="col-sm-6 col-md-3">
+                                    <h3>Sorry No Data Available</h3>
+                                </div>
+
+                                {%endif%}
+                                
+                             </div>
+                 
+                             <div class="clearfix"></div>
+                 
+                            
+                         </div>
+                     </div>
+                 </div>
+                    
+            </section>
+        </section>
+        
+
+ 
+{%endblock%}

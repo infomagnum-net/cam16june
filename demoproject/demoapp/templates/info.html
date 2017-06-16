@@ -1,0 +1,32 @@
+ <div class="row">
+<table id="tblSearch"  class="table table-striped">
+
+    <tr style="font-weight:bold;">
+
+        <th>Image</th>
+
+        <th>Name</th>
+
+        <th>Number oF Visits</th>
+      
+
+    </tr>
+
+    
+    {%for key,val in maindict.items %}
+    <tr id="ledger-tr">
+
+        <td><img src="{{val.2}}" alt="" style="height:100px"></td>
+
+        {%if val.1 %}
+        <td>{{val.1}}</td>
+        {%else%}
+        <td>{{key}}</td>
+        {%endif%}
+        <td>{{val.0}}</td>
+    </tr>
+
+     {%endfor%}
+
+</table>
+</div>

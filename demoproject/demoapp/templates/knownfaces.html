@@ -1,0 +1,69 @@
+{%extends "main.html"%}
+{%load static%}
+{%block content%}
+{%include "header.html"%}
+    
+    <body>
+       
+        <section id="main">
+           
+        
+            <section id="content">
+                <div class="container">
+                    <div class="block-header">
+                         <h2>Trained Photos <small>Trained Photos</small></h2>
+                 
+                       
+                 
+                     </div>
+                 
+                     <div class="card">
+                         <div class="lv-header-alt clearfix">
+                            <h2 class="lvh-label hidden-xs">Trained Photos</h2>
+                            
+                            <div class="lvh-search">
+                                <input type="text" placeholder="Start typing..." class="lvhs-input">
+            
+                                <i class="lvh-search-close">&times;</i>
+                            </div>
+                            
+                            
+                        </div>
+                 
+                         <div class="card-body card-padding">                     
+                             <div class="lightbox photos">
+                                 {%if userinfo%}
+                                 {%for k,v in userinfo.items %}
+                                 
+                                 <div data-src="{{k}}" class="col-md-2 col-sm-4 col-xs-6 thumbnail">
+                                     <div class="lightbox-item p-item">
+                                         <img src="{{k}}" alt="" style="height: 250px;width: 180px">
+                                         <h4>{{v}}</h4>
+                                         
+                                         
+                                     </div>
+                                 </div>
+                                 
+                                {%endfor%}
+                                {%else%}
+                                <div class="col-sm-6 col-md-3">
+                                    <h3>Sorry No Data Available</h3>
+                                </div>
+
+                                {%endif%}
+                                
+                             </div>
+                 
+                             <div class="clearfix"></div>
+                 
+                            
+                         </div>
+                     </div>
+                 </div>
+                    
+            </section>
+        </section>
+        
+
+ 
+{%endblock%}

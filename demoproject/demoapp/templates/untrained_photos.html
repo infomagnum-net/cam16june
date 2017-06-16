@@ -1,0 +1,64 @@
+ <div class="card-body card-padding">
+                            
+
+                            
+
+                            <br/>
+
+                            <p class="f-500 c-black m-b-5">User Training</p>
+                            <small>Select the photo from unknown photos and tag them</small>
+                             <div style="float: right" >Name:<input type="text" name="" id="multinamefiled1">&nbsp;&nbsp;<button class="btn bgm-lightblue waves-effect"  id="TrainMultipleModel1">Train The Model</button></div>
+                            <br/>
+                            <br/>
+
+                            <div class="row" id="timeline-add-selecte">
+                               
+                                
+                                {%for uuid,image in userinfo.items %}
+                                
+                                
+                                <div class="col-sm-6 col-md-3">
+                                    
+                                    <div class="thumbnail" style="height: 270px;">
+                                        
+                                        <p style="display: none"><img src="/static/images/green-tick.png" class="" alt="" style="height:30px;width:30px"></p>
+                                        
+                                        <input type="checkbox" name="vehicle" value="{{image.1}}" class="multcheckbox" style="display:none;">
+
+                                        <img src="{{image}}" class="" alt="" style="height:200px;width:200px">
+                                        <strong>{{name}}</strong>
+                                        
+                                    </div>
+                                   
+                                </div>
+                                {%endfor%}
+                                                                
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+<!-- <div class="pt-body" id="timeline-add-selecte">
+{%for untrained in untrained_photos%}
+<div class="pt-body">
+    
+           
+        <p style="display: none"><img src="/static/images/green-tick.png" class="" alt="" style="height:30px;width:30px"></p>
+        
+        <input type="checkbox" name="vehicle" value="{{image}}" class="multcheckbox" style="display:none;">
+
+        <img src="{{untrained.image}}" class="" alt="" style="height:150px;width:150px">
+
+        
+   
+   
+</div>
+{%endfor%}
+</div>
+
+
+
+ -->

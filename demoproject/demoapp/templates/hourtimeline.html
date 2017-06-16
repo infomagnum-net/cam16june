@@ -1,0 +1,158 @@
+{%extends "main.html"%}
+{%load static%}
+{%block content%}
+{%include "header.html"%}
+ 
+ <section id="main" data-layout="layout-1">
+  <section id="content">
+    <div class="container">
+        <div class="card-body card-padding">                     
+                            
+                            
+                        <div id="ajax-replace">                        
+                        <div class="p-timeline" id="timeline-img">
+                                
+                                <div class="pt-line text-right">
+                                    
+                                    <span class="d-block">{{current_year}}</span>
+                                    {{current_day_month}}
+                                </div>  
+                
+                                <div class="pt-body">
+                                    <h2 class="ptb-title">TimeLine Photos</h2>
+                                    <div class="btn-demo" id="btn-color-targets">
+                                    
+                                    {%for k,v in current_dict.items%}
+                                    
+                                    
+                                        <p style="display: none"><img src="/static/images/green-tick.png" class="" alt="" style="height:30px;width:30px"></p>
+
+                                        <input type="checkbox" name="vehicle" value="{{image.1}}" class="multcheckbox">
+                                        
+                                        <img src="{{v.0}}" alt="" style="height:100px;width: 100px;" >
+                                    
+
+                                    <div class="modal" id="name" tabindex="-1" role="dialog" aria-hidden="true">
+                                        <div class="modal-dialog" id="popup-replace">
+
+                                            </div>
+                                            </div>
+                                    
+                                    {%endfor%}
+                                
+
+                                </div>
+                                    
+                            </div>
+                        
+                        </div>
+
+
+                        <div class="p-timeline">
+                                
+                                <div class="pt-line text-right">
+                                    
+                                    <span class="d-block">{{pre_year}}</span>
+                                    {{pre_day_month}}
+                                </div>  
+                
+                                <div class="pt-body">
+                                    <h2 class="ptb-title">TimeLine Photos</h2>
+                                    <div class="btn-demo" id="btn-color-targets">
+                                    
+                                    {%for k,v in previous_dict.items%}
+                                    
+                                    <a data-toggle="modal" href="#name" class="" id="timeline-img" name="{{v.1}}">
+                                        
+                                        <img src="{{v.0}}" alt="" style="height:100px;width: 100px;" >
+                                    </a>
+
+                                    <div class="modal" id="name" tabindex="-1" role="dialog" aria-hidden="true">
+                                        <div class="modal-dialog" id="popup-replace">
+
+                                            </div>
+                                            </div>
+                                    
+                                    {%endfor%}
+                                
+
+                                </div>
+                                    
+                            </div>
+                        
+                        </div>
+
+
+                            <div class="p-timeline">
+                                
+                                <div class="pt-line  text-right">
+                                    
+                                    <span class="d-block">{{prepre_year}}</span>
+                                    {{prepre_day_month}}
+                                </div>  
+                
+                                <div class="pt-body">
+                                    <h2 class="ptb-title">TimeLine Photos</h2>
+                                    <div class="btn-demo" id="btn-color-targets">
+                                    
+                                    {%for k,v in prepre_dict.items%}    
+                                    
+                                    <a data-toggle="modal" href="#name" class="" id="timeline-img" name="{{v.1}}">
+                                        
+                                        <img src="{{v.0}}" alt="" style="height:100px;width: 100px;" >
+                                    </a>
+
+                                    <div class="modal" id="name" tabindex="-1" role="dialog" aria-hidden="true">
+                                        <div class="modal-dialog" id="popup-replace">
+
+                                            </div>
+                                            </div>
+                                    
+                                    {%endfor%}
+                                
+
+                                </div>
+                                    
+                            </div>
+
+                        
+                        </div>
+
+
+    </div>
+    </div>
+</section>
+</section>
+
+<script type="text/javascript">
+/*var interval = 60000;  // 1000 = 1 second, 3000 = 3 seconds
+function doAjax() {
+    //alert("gsdhg")
+    $.ajax({
+
+            //console.log("hello")
+            type: 'GET',
+            url: '//',
+            data: {name:"vinod"},
+            //dataType: 'json',
+            success: function (data) {
+                    //alert("data")
+                    //$("#autoupdate").html(data)
+                    //console.log("data updated")
+                    
+                    //$('#hidden').val(data);// first set the value     
+            },
+            complete: function (data) {
+                    // Schedule the next
+                    setTimeout(doAjax, interval);
+            }
+    });
+}
+setTimeout(doAjax, interval);*/
+
+</script>                           
+
+
+{%endblock%}
+
+

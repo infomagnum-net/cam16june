@@ -1,0 +1,199 @@
+{%load static%}
+<!DOCTYPE html>
+    <!--[if IE 9 ]><html class="ie9"><![endif]-->
+<html> 
+    <head>
+<style>
+.nav-font{font-size: 14px}
+</style>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Zoom</title>
+    
+        <!-- Vendor CSS -->
+        <link href="{% static 'vendors/bower_components/animate.css/animate.min.css'%}" rel="stylesheet">
+        <link href="{% static 'vendors/bower_components/bootstrap-sweetalert/lib/sweet-alert.css'%}" rel="stylesheet">
+        <link href="{% static 'vendors/bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css'%}" rel="stylesheet">
+        <link href="vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css'%}" rel="stylesheet">        
+        <link href="{% static 'vendors/bower_components/lightgallery/light-gallery/css/lightGallery.css'%}" rel="stylesheet">
+        <link href="{% static 'vendors/bower_components/fullcalendar/dist/fullcalendar.min.css" rel="stylesheet">
+        <!-- CSS -->
+        <link href="{% static 'css/app.min.1.css'%}" rel="stylesheet">
+        <link href="{% static 'css/app.min.2.css'%}" rel="stylesheet">
+        <link href="{% static 'css/style1.css'%}" rel="stylesheet">
+    </head>
+
+    <body>
+
+    {%block content%}
+    
+    {%endblock%}
+
+
+       <script src="{% static 'vendors/bower_components/jquery/dist/jquery.min.js'%}"></script>
+        <script src="{% static 'vendors/bower_components/bootstrap/dist/js/bootstrap.min.js'%}"></script>
+        
+                <script src="{% static 'vendors/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js'%}"></script>
+        <script src="{% static 'vendors/bower_components/Waves/dist/waves.min.js'%}"></script>
+        <script src="{% static 'vendors/bootstrap-growl/bootstrap-growl.min.js'%}"></script>
+        <script src="{% static 'vendors/bower_components/bootstrap-sweetalert/lib/sweet-alert.min.js'%}"></script>
+        <script src="{% static 'vendors/bower_components/lightgallery/light-gallery/js/lightGallery.min.js'%}"></script>
+        <script src="{% static 'vendors/bower_components/autosize/dist/autosize.min.js'%}"></script>
+        <script src="{% static 'vendors/bower_components/flot/jquery.flot.js'%}"></script>
+        <script src="vendors/bower_components/flot/jquery.flot.resize.js"></script>
+        
+
+
+        <script src="{% static 'vendors/sparklines/jquery.sparkline.min.js'%}"></script>
+        <script src="{% static 'vendors/bower_components/jquery.easy-pie-chart/dist/jquery.easypiechart.min.js'%}"></script>
+        <script src="{% static 'vendors/bower_components/fullcalendar/dist/fullcalendar.min.js'%}"></script>
+        
+        
+        <script src="{% static 'js/charts.js'%}"></script>
+        
+       
+
+
+
+        <!-- Placeholder for IE9 -->
+        <!--[if IE 9 ]>
+            <script src="vendors/bower_components/jquery-placeholder/jquery.placeholder.min.js"></script>
+        <![endif]-->
+        
+        <script src="{% static 'js/functions.js'%}"></script>
+       
+
+               <script type="text/javascript">
+            $(document).ready(function(){
+                $("#btn-color-targets a").click(function(){
+                        var id = $(this).attr('name');
+                        
+                         $.ajax({
+                            url: '/timelinepopup/',
+                            type: 'get',
+                            data: {'uuid':id},
+                            success: function(data) {
+                                $("#popup-replace").html(data)
+                                $('#popupsave').click(function(){
+                                    var userid=$('#userid').html();
+                                    var username = $('#userfilledname').val()
+
+                                    $.ajax({
+                            url: '/popuptagging/',
+                            type: 'get',
+                            data: {'userid':userid,'username':username},
+                            success: function(data) {
+                                $("#replace_name").html(data)
+
+                            }
+
+                        });
+                                    
+                                });
+                            },
+                            
+                        }); 
+                    });
+
+
+                //Basic Example
+/*                $("#data-table-basic").bootgrid({
+                    css: {
+                        icon: 'zmdi icon',
+                        iconColumns: 'zmdi-view-module',
+                        iconDown: 'zmdi-expand-more',
+                        iconRefresh: 'zmdi-refresh',
+                        iconUp: 'zmdi-expand-less'
+                    },
+                });*/
+                
+               
+
+$.expr[":"].containsNoCase = function (el, i, m) {
+        var search = m[3];
+        if (!search) return false;
+        return eval("/" + search + "/i").test($(el).text());
+    };
+
+
+
+
+            // used for the first example in the blog post
+        $('li:contains(\'DotNetNuke\')').css('color', '#0000ff').css('font-weight', 'bold');
+
+        // hide the cancel search image
+        $('#imgSearch').hide();
+
+        // reset the search when the cancel image is clicked
+        $('#imgSearch').click(function () {
+            resetSearch();
+        });
+
+        // cancel the search if the user presses the ESC key
+        $('#txtSearch').keyup(function (event) {
+            if (event.keyCode == 27) {
+                resetSearch();
+            }
+        });
+
+        // execute the search
+        $('#txtSearch').keyup(function () {
+            // only search when there are 3 or more characters in the textbox
+            if ($('#txtSearch').val().length > 0) {
+                // hide all rows
+                $('#tblSearch tr').hide();
+                // show the header row
+                $('#tblSearch tr:first').show();
+                // show the matching rows (using the containsNoCase from Rick Strahl)
+                $('#tblSearch tr td:containsNoCase(\'' + $('#txtSearch').val() + '\')').parent().show();
+
+                // show the cancel search image
+                $('#imgSearch').show();
+            }
+            else if ($('#txtSearch').val().length == 0) {
+                // if the user removed all of the text, reset the search
+                resetSearch();
+            }
+
+            // if there were no matching rows, tell the user
+            if ($('#tblSearch tr:visible').length == 1) {
+                // remove the norecords row if it already exists
+                $('.norecords').remove();
+                // add the norecords row
+                $('#tblSearch').append('<tr class="norecords"><td colspan="5" class="Normal">No records were found</td></tr>');
+            }
+        });
+
+                
+            });
+
+
+
+
+            function resetSearch() {
+        // clear the textbox
+        $('#txtSearch').val('');
+        // show all table rows
+        $('#tblSearch tr').show();
+        // remove any no records rows
+        $('.norecords').remove();
+        // remove the cancel search image
+        $('#imgSearch').hide();
+        // make sure we re-focus on the textbox for usability
+        $('#txtSearch').focus();
+    }
+
+$("#alert-facerec").hide()
+$("#FaceRecognition").click(function(){
+    //alert("JJJJJJJJJ")
+    
+    $("#alert-facerec").show('slow')
+      
+
+});
+        </script>
+    
+    </body>
+</html>

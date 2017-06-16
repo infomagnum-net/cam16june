@@ -1,0 +1,99 @@
+{%extends "main.html"%}
+{%load static%}
+{%block content%}
+{%include "header.html"%}
+{%include "chatpage.html"%}
+<section id="main">
+	<section id="content">
+	    <div class="container">
+	        <div class="card">
+	            
+	            <div style="float: right" id="update-optns" >
+	            	
+	            	<nav style="position: fixed;">
+	            		<i class="zmdi zmdi-edit zmdi-hc-fw" style="font-size:20px;" title="ADD"></i>&nbsp;&nbsp;&nbsp;
+	            		<i class="zmdi zmdi-delete zmdi-hc-fw" style="font-size:20px;" title="DELETE"></i>&nbsp;&nbsp;&nbsp;
+	            		<a data-toggle="modal" href="#preventClick"><i class="zmdi zmdi-info zmdi-hc-fw" style="font-size:20px;" title="INFO"></i></a>&nbsp;&nbsp;&nbsp;<br><br>
+	            		
+	            		<div style="display: none" id="inputfld">
+	            		<input type="text" name="" id="inptdta"><br><input type="submit" name="" value="Add/Edit" id="add-edit">&nbsp;&nbsp;<input type="submit" name="" value="Cancel" id="cancel">&nbsp;&nbsp;</div>
+	            	</nav>
+	            	
+
+	            </div>
+	            <div class="card-body card-padding">
+	            
+	            {%for date,image in timelineresults.iteritems reversed%}
+	            	{%if image%}
+	            	<div class="p-timeline" id="timeline-img">
+	               	<div class="row " id="timeline-edit-selecte">
+	                    <div class="pt-line text-right">
+	                        <strong><span class="d-block">{{today_dte}}</span>
+	                        {{date}}hrs</strong>
+	                        
+	                    </div> 
+
+	                    {%for k,v in image.items%}
+	                		<div style="padding-left: 30px;">
+	                    	<div class="col-md-2 pt-body" style="padding-left: 0px;padding-right: 0px;width: 82px">
+            
+            					<div class="thumbnail" style="margin-bottom:0px;border:none;">
+                
+               					
+                
+                			<input type="checkbox" name="vehicle" value="{{v.1}}" class="multcheckbox" style="display:none;" id="checkboxitem">
+
+                			{%if v.2 %}
+                			<img src="{{v.0}}" class="" alt="" style="height:100px;width:100px;
+                			 " title="{{v.2}}">
+                			{%else%}
+                			<img src="{{v.0}}" class="" alt="" style="height:100px;width:100px;
+                			" title="{{v.1}}">
+                			{%endif%}
+                			<strong>{{v.2}}</strong><br>
+                			<strong>{{v.3}}</strong>
+                			
+                
+                
+            				</div>
+           
+        				</div>
+
+        				</div>
+	                    {%endfor%}
+	            	</div>
+	            	
+	        	</div>
+
+
+	        			{%endif%}
+	        		{%endfor%}
+
+	        		
+	        		
+	        		
+	        		
+	        	</div>
+	        	<div class="modal fade" id="preventClick" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h4 class="modal-title">User Info</h4>
+                                        </div>
+                                        <div class="modal-body" id="info-rplce">
+                                            
+                                        </div>
+                                        <div class="modal-footer">
+                                            
+                                            <button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+	    	</div>
+		</div>
+	</section>
+</section>
+
+{%endblock%}
+

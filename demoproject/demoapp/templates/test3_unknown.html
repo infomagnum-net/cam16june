@@ -1,0 +1,126 @@
+{%extends "main.html"%}
+{%load static%}
+{%block content%}
+{%include "header.html"%}
+
+<section id="main" data-layout="layout-1">
+    <section id="content">
+    <div class="container">
+        <div class="card">
+
+        <div class="card" id="">
+                        
+                        <div class="card-body card-padding">
+
+                             <h4>Time Line</h4>
+                            <small>Captured Persons</small>
+
+                            <br/>
+                            <br/>
+                            <div id="autoupdate">
+
+                            <div class="row" >
+
+
+    <p style="text-align:right;width:500px;">
+    <span style="font-weight:bold;">Search:</span> <input type="text" id="txtSearch" name="txtSearch" maxlength="50" />&nbsp;
+    <img id="imgSearch" src="/images/cancel.gif" alt="Cancel Search" title="Cancel Search" style="width:150px;width:14px;height:14px;" />
+
+</p>
+<table id="tblSearch"  class="table table-striped">
+
+    <tr style="font-weight:bold;">
+
+        <th>Image</th>
+
+        <th>Name</th>
+
+        <th>Status</th>
+
+        <th>Visited At</th>
+
+        <th>Occupation</th>
+        
+
+    </tr>
+
+    
+    {%for user in userinfo %}
+    <tr>
+
+        <td><a href="#"><img src="{{user.imgpath}}" alt="" style="height:100px"></a></td>
+
+        <td>{{user.name}}</td>
+
+        <td>{{user.status}}</td>
+
+        <td>{{user.created_at}}</td>
+
+        <td>{{user.occupation}}</td>
+        
+
+    </tr>
+
+    {%endfor%}
+
+</table>
+</div>
+</div>
+
+    </div>
+    </div>
+    </div>
+    </div>
+    
+
+    </section>
+</section>  
+
+
+<script type="text/javascript">
+/*window.setTimeout(function () {
+    
+$.ajax({
+    alert("hdsj")
+        type: 'POST',
+        url: "/test",
+        data: {}, //passing some input here
+        success: function(response){
+           
+           output = response;
+           alert(output);
+        }
+})
+
+    
+}, 5000);
+*/
+
+
+/*var interval = 20000;  // 1000 = 1 second, 3000 = 3 seconds
+function doAjax() {
+    $.ajax({
+
+            //console.log("hello")
+            type: 'GET',
+            url: '/ajax',
+            data: {name:"vinod"},
+            //dataType: 'json',
+            success: function (data) {
+                    $("#autoupdate").html(data)
+                    //console.log("data updated")
+                    //alert("data")
+                    //$('#hidden').val(data);// first set the value     
+            },
+            complete: function (data) {
+                    // Schedule the next
+                    setTimeout(doAjax, interval);
+            }
+    });
+}
+setTimeout(doAjax, interval);
+*/
+
+</script>   
+
+{%endblock%}

@@ -1,0 +1,27 @@
+
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h4 class="modal-title">Image Updations</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p style="text-align: center">
+                                            {%if username%}
+                                            <i class="zmdi zmdi-edit zmdi-hc-fw" style="font-size: 30px;" id="edit-ledger-name"></i><span>Edit</span>&nbsp;&nbsp;&nbsp;&nbsp;
+                                            {%else%}
+                                            <i class="zmdi zmdi-edit zmdi-hc-fw" style="font-size: 30px" id="add-ledger-name"></i> <span>Add</span>&nbsp;&nbsp;&nbsp;&nbsp;
+                                            {%endif%}
+
+                                            <i class="zmdi zmdi-delete zmdi-hc-fw" style="font-size: 30px" id="delete-ledger-name"></i> <span>Delete</span>&nbsp;&nbsp;&nbsp;&nbsp;
+
+                                            <i class="zmdi zmdi-info zmdi-hc-fw" style="font-size: 30px" id="info-ledger-name"></i> <span>Info</span>&nbsp;&nbsp;&nbsp;&nbsp;
+                                            </p>
+
+                                            <p style="text-align: center;display: none" id="ledger-edit-field"><br>Edit Name:<input type="text" name="" id="inputvalueledger" >
+                                            <button class="btn bgm-blue waves-effect">Update</button>
+                                            </p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            
+                                        </div>
+                                    </div>
+                               

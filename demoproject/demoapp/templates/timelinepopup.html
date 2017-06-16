@@ -1,0 +1,26 @@
+{%load static%}
+                        <div class="card profile-view">
+                            <div class="pv-header">
+                                <img src="{{image}}" class="pv-main" alt="">
+                            </div>
+                            
+                            <div class="pv-body">
+                                <div id="replace_name">
+                                {%if name%}
+                                <h2>{{name}}</h2>
+                                {%else%}
+                                <h2 id="userid">{{uuid}}</h2>
+                                <input type="text" name="" id="userfilledname">
+                                <input type="submit" value="save" id="popupsave">
+                                {%endif%}
+                                </div>
+                                <small>User Visited Times:</small>
+                                
+                                
+                                {%for i in created_at_list%}
+                                        <li>{{i}}</li>
+                                    {%endfor%}
+                                             
+                               
+                            </div>
+                        </div>

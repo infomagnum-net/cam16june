@@ -1,0 +1,34 @@
+
+<div class="card-body card-padding">
+    <p class="f-500 c-black m-b-5">User Training</p>
+    <small>Select the photo from unknown photos and tag them</small>
+     <div style="float: right" >Name:<input type="text" name="" id="multinameeditfiled1">&nbsp;&nbsp;<button class="btn bgm-lightblue waves-effect"  id="TrainMultipleeditModel1">Train The Model</button></div>
+    <br/>
+    <br/>
+
+    <div class="row" id="timeline-edit-selecte">
+       
+        
+        {%for uuid,image in userinfo.items %}
+        
+        
+        <div class="col-md-2" style="padding-left: 0px;padding-right: 0px;width: 82px">
+            
+            <div class="thumbnail" style="margin-bottom:0px;border:none;">
+                
+                <p style="display: none"><img src="/static/images/green-tick.png" class="" alt="" style="height:30px;width:30px"></p>
+                
+                <input type="checkbox" name="vehicle" value="{{uuid}}" class="multcheckbox" style="display:none;">
+
+                <img src="{{image.0}}" class="" alt="" style="height:100px;width:100px">
+                <!-- <strong>{{image.1}}</strong> -->
+                
+            </div>
+           
+        </div>
+        {%endfor%}
+                                        
+
+            </div>
+    </div>
+

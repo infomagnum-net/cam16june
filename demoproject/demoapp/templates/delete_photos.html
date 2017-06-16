@@ -1,0 +1,37 @@
+<div class="card-body card-padding">
+
+                            <br/>
+
+                            <p class="f-500 c-black m-b-5">User Training</p>
+                            <small>Select the photo from unknown photos and tag them</small>
+                             <button class="btn bgm-lightblue waves-effect"  id="deletemodels" style="float: right">Delete The Model</button></div>
+                            <br/>
+                            <br/>
+
+                            <div class="row" id="timeline-delete-selecte">
+                               
+                                {%for train in trained_photos %}
+                                
+                                
+                                
+                                <div class="col-sm-6 col-md-3">
+                                    
+                                    <div class="thumbnail" style="height: 270px;">
+                                        
+                                        <p style="display: none"><img src="/static/images/green-tick.png" class="" alt="" style="height:30px;width:30px"></p>
+                                        
+                                        <input type="checkbox" name="vehicle" value="{{train.id}}" class="multcheckbox" style="display:none;">
+
+                                        <img src="{{train.image}}" class="" alt="" style="height:200px;width:200px">
+                                        
+                                        
+                                    </div>
+                                   
+                                </div>
+                                {%endfor%}
+                                                                
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>

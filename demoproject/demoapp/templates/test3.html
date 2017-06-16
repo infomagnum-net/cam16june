@@ -1,0 +1,92 @@
+{%extends "main.html"%}
+{%load static%}
+{%block content%}
+{%include "header.html"%}
+{%include "chatpage.html"%}
+
+<section id="main" data-layout="layout-1">
+    <section id="content">
+    <div class="container">
+        <div class="card">
+
+        <div class="card " id="" >
+                        
+                        <div class="card-body card-padding">
+
+                             <h4>Time Line</h4>
+                            <small>Captured Persons</small>
+
+                            <br/>
+                            <br/>
+                            <div id="autoupdate">
+
+                            <div class="row" >
+
+
+    <p style="text-align:right;width:500px;">
+    <span style="font-weight:bold;">Search:</span> <input type="text" id="txtSearch" name="txtSearch" maxlength="50" />&nbsp;
+    <img id="imgSearch" src="/images/cancel.gif" alt="Cancel Search" title="Cancel Search" style="width:150px;width:14px;height:14px;" />
+
+</p>
+<table id="tblSearch"  class="table table-striped">
+
+    <tr style="font-weight:bold;">
+
+        <th>Image</th>
+
+        <th>Name</th>
+
+        <th>Status</th>
+
+        <th>Visited At</th>
+
+        <th>Occupation</th>
+        
+
+    </tr>
+
+    
+    {%for user in userinfo %}
+    <tr id="ledger-tr">
+
+        <td><a data-toggle="modal" href="#preventClick" name="{{user.id}}" value="{{user.name}}"><img src="{{user.image}}" alt="" style="height:100px"></a></td>
+
+        <td class="username-ledgr">{{user.name}}</td>
+
+        <td>{{user.status}}</td>
+
+        <td>{{user.created_at}}</td>
+
+        <td class="id-ledgr">{{user.uuid}}</td>
+        
+
+    </tr>
+
+    <div class="modal fade" id="preventClick" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-hidden="true">
+                                <div class="modal-dialog" id="ledgerpopup">
+                                    
+                                </div>
+                            </div>
+
+    {%endfor%}
+
+</table>
+</div>
+</div>
+
+    </div>
+    </div>
+    </div>
+    </div>
+    
+
+    </section>
+</section>  
+
+
+<script type="text/javascript">
+
+
+</script>   
+
+{%endblock%}

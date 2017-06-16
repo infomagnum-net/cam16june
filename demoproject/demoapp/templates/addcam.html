@@ -1,0 +1,104 @@
+{%extends "main.html"%}
+{%load static%}
+{%block content%}
+{%include "header.html"%}
+
+<section id="main" data-layout="layout-1">
+	<section id="content">
+        <div class="container">
+        <div class="card">
+                        <form class="form-horizontal" role="form" method="post" action="#">
+                        {% csrf_token %}
+                            <div class="card-header">
+                                <h2>ADD CAMERA</h2>
+                               
+                            </div>
+                            <p style="color: red;text-align: center;">{{errormsg}}</p>
+                            <p style="color: green;text-align: center;">{{success_msg}} </p>
+                            <div class="card-body card-padding">
+	                            
+                                <div class="form-group">
+                                    <label for="inputEmail3" class="col-sm-2 control-label">Name</label>
+                                    <div class="col-sm-10">
+                                        <div class="fg-line">
+                                            <input type="email" class="form-control input-sm" placeholder="Camname" name="Camname" required="True">
+                                             <!-- {{form.email}}
+                                             {{form.email.errors}} -->
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+	                                    <label for="inputEmail3" class="col-sm-2 control-label">CamIp</label>
+	                                    <div class="col-sm-10">
+	                                        <div class="fg-line">
+	                                            <input type="text" class="form-control input-sm"  placeholder="CamIp" name="CamIp" required="True">
+	                                            <!-- {{form.username}}
+	                                            {{form.username.errors}} -->
+	                                        </div>
+	                                    </div>
+	                                </div>
+                                
+
+                                <div class="form-group">
+                                        <label for="inputEmail3" class="col-sm-2 control-label">Height</label>
+                                        <div class="col-sm-10">
+                                            <div class="fg-line">
+                                                <input type="text" class="form-control input-sm"  placeholder="Resolution Height" name="height" required="True">
+                                                <!-- {{form.username}}
+                                                {{form.username.errors}} -->
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                <div class="form-group">
+                                        <label for="inputEmail3" class="col-sm-2 control-label">Width</label>
+                                        <div class="col-sm-10">
+                                            <div class="fg-line">
+                                                <input type="text" class="form-control input-sm"  placeholder="Resolution Width" name="width" required="True">
+                                                <!-- {{form.username}}
+                                                {{form.username.errors}} -->
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                <div class="form-group">
+                                        <label for="inputEmail3" class="col-sm-2 control-label">Frame Rate</label>
+                                        <div class="col-sm-10">
+                                            <div class="fg-line">
+                                                <input type="text" class="form-control input-sm"  placeholder="Number Of Frames Per Second" name="fps" required="True">
+                                                <!-- {{form.username}}
+                                                {{form.username.errors}} -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="inputEmail3" class="col-sm-2 control-label">Purpose</label>
+                                        <div class="col-sm-10">
+                                            <div class="fg-line">
+                                                <input type="text" class="form-control input-sm"  placeholder="Face Recognition,Motion Detection,etc.." name="CamIp" required="True">
+                                                <!-- {{form.username}}
+                                                {{form.username.errors}} -->
+                                            </div>
+                                        </div>
+                                    </div>
+
+                               
+                                
+                                <div class="form-group">
+                                    <div class="col-sm-offset-2 col-sm-10">
+                                        <button type="submit" class="btn btn-primary btn-sm">Add</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        
+                                    </div>
+
+                                    
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+        </div>
+    </section>
+</section>        
+
+{%endblock%}

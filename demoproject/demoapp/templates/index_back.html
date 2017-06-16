@@ -1,0 +1,305 @@
+{%extends "main.html"%}
+{%load static%}
+{%block content%}
+{%include "header.html"%}
+        
+        <section id="main" data-layout="layout-1">
+           
+
+            <section id="content">
+                <div class="container">
+                    <div class="block-header">
+                        <h2>Surveillance</h2>
+                        
+
+                        
+                    </div>
+                    
+                    <div class="card">
+                        
+                        <div class="card-body card-padding">
+                            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                                <!-- Indicators -->
+                                
+                              
+                                <!-- Wrapper for slides -->
+                                <div class="carousel-inner" role="listbox">
+                                    <div class="item active">
+                                        <img src="{% static 'media/carousel/c-1.jpg'%}" alt="">
+                                        <div class="carousel-caption">
+                                            <h3>Surveillance</h3>
+                                            <p>You Are Being Monitored...</p>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <img src="{% static 'media/carousel/c-2.jpg'%}" alt="">
+                                    </div>
+                                    <div class="item">
+                                        <img src="{% static 'media/carousel/c-3.jpg''%}" alt="">
+                                    </div>
+                                </div>
+                              
+                                <!-- Controls -->
+                                <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                                    <span class="zmdi zmdi-chevron-left" aria-hidden="true"></span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                                    <span class="zmdi zmdi-chevron-right" aria-hidden="true"></span>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+               
+                    <div class="mini-charts">
+                        <div class="row">
+                            <div class="col-sm-6 col-md-3">
+                                <div class="mini-charts-item bgm-cyan">
+                                    <div class="clearfix">
+                                        <div class="chart stats-bar"></div>
+                                        <div class="count">
+                                            <strong>Total LPR</strong>
+                                            <h2>{{total_lpr}}</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            
+                            <div class="col-sm-6 col-md-3">
+                                <div class="mini-charts-item bgm-orange">
+                                    <div class="clearfix">
+                                        <div class="chart stats-line"></div>
+                                        <div class="count">
+                                            <strong>Total Identified Faces</strong>
+                                            <h2>{{total_known}}</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-sm-6 col-md-3">
+                                <div class="mini-charts-item bgm-bluegray">
+                                    <div class="clearfix">
+                                        <div class="chart stats-line-2"></div>
+                                        <div class="count">
+                                            <strong>Total Un Identified Faces</strong>
+                                            <h2>{{total_unknown}}</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6 col-md-3">
+                                <div class="mini-charts-item bgm-lightgreen">
+                                    <div class="clearfix">
+                                        <div class="chart stats-bar-2"></div>
+                                        <div class="count">
+                                            <strong>Total Trained Faces</strong>
+                                            <h2>{{total_captured}}</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+
+
+
+                         <div class="card-body card-padding">
+
+                           
+
+                            <div class="row">
+                                <div class="col-sm-6 col-md-3">
+                                    <div class="thumbnail">
+                                        <img src="{% static 'media/carousel/lpr.jpg'%}" alt="">
+                                        <div class="caption">
+                                            <h4><a href="/lprdetect">Number Plate Recognition</a></h4>
+                                            <p>Even Vehicle Will Not Escape</p>
+                                            
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-md-3">
+                                    <div class="thumbnail">
+                                        <img src="{% static 'media/carousel/known.jpg'%}" alt="">
+                                        <div class="caption">
+                                            <h4><a href="/known">Identified People</a></h4>
+                                            <p>All Identified People From Monitoring Are Here</p>
+                                            
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-md-3">
+                                    <div class="thumbnail">
+                                        <img src="{% static 'media/carousel/unknown.jpg'%}" alt="">
+                                        <div class="caption">
+                                            <h4><a href="/unknown">UnIdentified People</a></h4>
+                                            <p>Even The Unkown People Are Not Escaped</p>
+                                            
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6 col-md-3">
+                                    <div class="thumbnail">
+                                        <img src="{% static 'media/carousel/train.jpg'%}" alt="">
+                                        <div class="caption">
+                                            <h4><a href="/training">Training</a></h4>
+                                            <p>Teach Me New Faces Which You Want Me To Recognize</p>
+                                            
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+ <div class="dash-widgets">
+                        <div class="row">
+                            <div class="col-md-3 col-sm-6">
+                                <div id="site-visits" class="dash-widget-item bgm-teal">
+                                    <div class="dash-widget-header">
+                                        <div class="p-20">
+                                            <div class="dash-widget-visits"></div>
+                                        </div>
+                                        
+                                        <div class="dash-widget-title">For the past 30 days Face Recognition Statistics</div>
+                                        
+                                        
+                                    </div>
+                                    
+                                    <div class="p-20">
+                                        
+                                        <small>Total Monitored Faces</small>
+                                        <h3 class="m-0 f-400">{{thirtydays_all}}</h3>
+                                        
+                                        <br/>
+                                        
+                                        <small>Identified Faces</small>
+                                        <h3 class="m-0 f-400">{{thirtydays_known}}</h3>
+                                        
+                                        <br/>
+                                        
+                                        <small>UnIdentified Faces</small>
+                                        <h3 class="m-0 f-400">{{thirtydays_unknown}}</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-3 col-sm-6">
+                                <div id="pie-charts" class="dash-widget-item">
+                                    <div class="bgm-pink">
+                                        <div class="dash-widget-header">
+                                            <div class="dash-widget-title">Face Recognition Statistics</div>
+                                        </div>
+                                        
+                                        <div class="clearfix"></div>
+                                        
+                                        <div class="text-center p-20 m-t-25">
+                                            <div class="easy-pie main-pie" data-percent="75">
+                                                <div class="percent">{{total_captured}}</div>
+                                                <div class="pie-title">Total Monitored Faces</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="p-t-20 p-b-20 text-center">
+                                        <div class="easy-pie sub-pie-1" data-percent="56">
+                                            <div class="percent">{{total_known}}</div>
+                                            <div class="pie-title">Identified Faces</div>
+                                        </div>
+                                        <div class="easy-pie sub-pie-2" data-percent="84">
+                                            <div class="percent">{{total_unknown}}</div>
+                                            <div class="pie-title">UnIdentified Faces</div>
+                                        </div>
+
+                                    </div>
+                                    
+    
+                                </div>
+                            </div>
+                            
+                            <div class="col-sm-6">
+                            <!-- Calendar -->
+                            <div id="calendar-widget"></div>
+
+
+                        </div>
+    
+                            
+                        </div>
+                    </div>
+                       
+                    
+                </div>
+<footer id="footer">
+            Copyright &copy; 2017 Zoom CCTV
+            
+            <ul class="f-menu">
+                <li><a href="">Home</a></li>
+                <li><a href="">Timeline</a></li>
+                <li><a href="">Reports</a></li>
+                <li><a href="">Support</a></li>
+                <li><a href="">Contact</a></li>
+            </ul>
+        </footer>
+
+
+            </section>
+        </section>
+        
+        
+        <!-- Page Loader -->
+
+{%endblock%}
+
+        <!-- Older IE warning message -->
+        <!--[if lt IE 9]>
+            <div class="ie-warning">
+                <h1 class="c-white">Warning!!</h1>
+                <p>You are using an outdated version of Internet Explorer, please upgrade <br/>to any of the following web browsers to access this website.</p>
+                <div class="iew-container">
+                    <ul class="iew-download">
+                        <li>
+                            <a href="http://www.google.com/chrome/">
+                                <img src="img/browsers/chrome.png" alt="">
+                                <div>Chrome</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.mozilla.org/en-US/firefox/new/">
+                                <img src="img/browsers/firefox.png" alt="">
+                                <div>Firefox</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://www.opera.com">
+                                <img src="img/browsers/opera.png" alt="">
+                                <div>Opera</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.apple.com/safari/">
+                                <img src="img/browsers/safari.png" alt="">
+                                <div>Safari</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
+                                <img src="img/browsers/ie.png" alt="">
+                                <div>IE (New)</div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <p>Sorry for the inconvenience!</p>
+            </div>   
+        <![endif]-->
+ 

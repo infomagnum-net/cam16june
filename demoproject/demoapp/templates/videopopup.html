@@ -1,0 +1,10 @@
+<div class="row">
+	{%for video in capturevideos%}
+	<div class="col-sm-6 col-md-4">
+	    <video width="320" height="240" controls>
+	        <source src="{{video.path}}" type="video/mp4">
+	    
+	    </video>
+	</div>
+	{%endfor%}
+</div>

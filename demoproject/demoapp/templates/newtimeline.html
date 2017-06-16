@@ -1,0 +1,37 @@
+{%extends "main.html"%}
+{%load static%}
+{%block content%}
+{%include "header.html"%}
+ 
+ <section id="main">
+                <div class="container">
+
+                        
+                          <ul>
+        {%for user in userinfo %}
+        <li>
+        <div><span></span>
+          
+            <div class="title"><a href="#"><img src="{{user.image}}" alt="" style="height:100px"></a></div>
+            
+            <div class="info" style="color:black">{{user.name}}</div>
+            <div class="info" style="color:black">{{user.uuid}}</div>
+                        {%if user.name%}
+            <div><a href="/editinfo/{{user.id}}">Edit Info</a></div>
+            {%endif%}
+            
+          </div> <span class="number"><span style="color:rgb(33,150,243)">{{user.created_at}}</span><span></span>
+        </li>
+        
+        
+        {%endfor%}
+      </ul>    
+                    </div>
+                        </div>
+                    </div>
+                     
+                    
+            </section>
+ 
+
+{%endblock%}

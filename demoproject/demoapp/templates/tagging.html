@@ -1,0 +1,89 @@
+{%extends "main.html"%}
+{%load static%}
+{%block content%}
+{%include "header.html"%}
+        <section id="main">
+            
+            <section id="content">
+                <div class="container">
+                    
+                    <div class="block-header">
+                        <h2>User Tagging <small>Fill The User Form To Recognise the User</small></h2>
+                        
+                        <ul class="actions m-t-20 hidden-xs">
+                            <li class="dropdown">
+                                
+                    
+                                
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="card" id="profile-main">
+                        <div class="pm-overview c-overflow">
+                            <div class="pmo-pic">
+                                <div class="p-relative">
+                                    
+                                    <a href="">
+                                        <img class="img-responsive" src="{{userdata.image}}" alt="" style="height:300px"> 
+                                    </a>
+                                    
+                                    
+                                   
+                                </div>
+                                <br><br><br><br>
+                                <a href="/training" class="btn btn-primary btn-sm m-t-10">Back to Training</a>
+                                
+                            </div>
+                            
+                            <!-- <div class="pmo-block pmo-contact hidden-xs">
+                                <h2>Contact</h2>
+                                
+                                <a href="">
+                                        <img class="img-responsive" src="{%static 'images/cam1.jpg'%}" alt=""> 
+                                    </a>
+                            </div>
+                             -->
+                            
+                        </div>
+                        
+                        <div class="pm-body clearfix">
+                            
+                            
+                            
+                          
+                         <div class="card">
+                        <div class="card-header">
+                            <h2>User Tagging Form <small></small></h2>
+                        </div>
+                        
+                        <div class="card-body card-padding">
+                            <form role="form" method="post" action="#">
+                            {% csrf_token %}
+                                <div class="form-group fg-line">
+                                    <label for="">Name</label>
+                                    <input type="text" class="form-control input-sm" placeholder="Enter Name" name="username" required="True">
+                                </div>
+
+                                <div class="form-group fg-line">
+                                    <label for="">Mobile</label>
+                                    <input type="Number" class="form-control input-sm" placeholder="Enter Mobile Number" name="mobile">
+                                </div>                                
+
+                                <div class="form-group fg-line">
+                                    <label for="">Occupation</label>
+                                    <input type="text" class="form-control input-sm" placeholder="Enter Name" name="occupation">
+                                </div>
+                       
+                                <button type="submit" class="btn btn-primary btn-sm m-t-10">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                    
+                           
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+        {%endblock%}

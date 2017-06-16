@@ -1,0 +1,98 @@
+{%extends "main.html"%}
+{%load static%}
+{%block content%}
+{%include "header.html"%}
+{%include "chatpage.html"%}
+
+<section id="main" data-layout="layout-1">
+    <section id="content">
+    <div class="container">
+        <div class="card">
+
+        <div class="card " id="" >
+                        
+                        <div class="card-body card-padding">
+
+                             <h4>Events</h4>
+                            <small>Captured Persons</small>
+
+                            <br/>
+                            <br/>
+                            <div id="autoupdate">
+
+                            <div class="row" >
+
+
+    <p style="text-align:right;width:500px;">
+    <span style="font-weight:bold;">Search:</span> <input type="text" id="txtSearch" name="txtSearch" maxlength="50" />&nbsp;
+    <img id="imgSearch" src="/images/cancel.gif" alt="Cancel Search" title="Cancel Search" style="width:150px;width:14px;height:14px;" />
+
+</p>
+<table id="tblSearch"  class="table table-striped">
+
+    <tr style="font-weight:bold;">
+
+        <th>Event ID</th>
+
+        <th>Time</th>
+
+        <th>Video</th>
+
+        <th>Download</th>
+
+        <th>Delete</th>
+
+        
+
+    </tr>
+    
+    {%for events in capturevideos %}
+    
+    <tr id="evnts-tr">
+        <td>{{events.id}}</td>
+
+        <td>{{events.created_at}}</td>
+        <td><a data-toggle="modal" href="#preventClick" name="{{events.id}}"><i class="zmdi zmdi-videocam zmdi-hc-fw" style="font-size:22px;"></i></a></td>
+        <td><a href="/download/{{events.id}}"><i class="zmdi zmdi-download zmdi-hc-fw" style="font-size:22px;"></i></a></td>
+        <td><a href="/deletevideo/{{events.id}}"><i class="zmdi zmdi-delete zmdi-hc-fw" style="font-size:22px;"></i></a></td>
+
+    </tr>
+
+<div class="modal fade" id="preventClick" tabindex="-1" role="dialog" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h4 class="modal-title">Event Video</h4>
+                                        </div>
+                                        <div class="modal-body" id="evnt-video-rplce">
+                                            <p>{{events.id}}</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-link">Save changes</button>
+                                            <button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+    {%endfor%}
+
+</table>
+</div>
+</div>
+
+    </div>
+    </div>
+    </div>
+    </div>
+    
+
+    </section>
+</section>  
+
+
+<script type="text/javascript">
+
+
+</script>   
+
+{%endblock%}

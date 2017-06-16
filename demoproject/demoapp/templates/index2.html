@@ -1,0 +1,239 @@
+{%extends "main.html"%}
+{%load static%}
+{%block content%}
+{%include "header.html"%}
+        
+        <section id="main" data-layout="layout-1">
+           
+
+            <section id="content">
+                <div class="container">
+                    <div class="block-header">
+                        <h2>Surveillance</h2>
+                        
+
+                        
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-header">
+                            <img src="{%static 'images/cam_new.jpg'%}" style="height: 360px;width:1060px">
+                            
+                            
+                           
+                        </div>
+                        
+                       
+                    </div>
+
+                    <div class="mini-charts">
+                        <div class="row">
+                            <div class="col-sm-6 col-md-3">
+                                <div class="mini-charts-item bgm-cyan">
+                                    <div class="clearfix">
+                                        <div class="chart stats-bar"></div>
+                                        <div class="count">
+                                            <strong>Total Monitored Faces</strong>
+                                            <h2>987,459</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-sm-6 col-md-3">
+                                <div class="mini-charts-item bgm-lightgreen">
+                                    <div class="clearfix">
+                                        <div class="chart stats-bar-2"></div>
+                                        <div class="count">
+                                            <strong>Total Identified Faces</strong>
+                                            <h2>356,785</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-sm-6 col-md-3">
+                                <div class="mini-charts-item bgm-orange">
+                                    <div class="clearfix">
+                                        <div class="chart stats-line"></div>
+                                        <div class="count">
+                                            <strong>Total Un Identified Faces</strong>
+                                            <h2>458,778</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-sm-6 col-md-3">
+                                <div class="mini-charts-item bgm-bluegray">
+                                    <div class="clearfix">
+                                        <div class="chart stats-line-2"></div>
+                                        <div class="count">
+                                            <strong>Total Trained Faces</strong>
+                                            <h2>23,856</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                        <div class="dash-widgets">
+                        <div class="row">
+                            <div class="col-md-3 col-sm-6">
+                                <div id="site-visits" class="dash-widget-item " style="background-color: rgb(0,168,190) ">
+                                    <div class="dash-widget-header">
+                                        <div class="p-20">
+                                            <div class="dash-widget-visits"></div>
+                                        </div>
+                                        
+                                        <div class="dash-widget-title">
+                                        <a href="#" style="color:white"><small style="font-size: 14px">Number Plate Recognition</small></a>
+
+                                        </div>
+                                        
+                                        
+                                    </div>
+                                    <img src="{%static 'images/numbr1.jpeg'%}" style="height: 302px;width: 261px;">
+                                    <!-- <div class="p-20">
+                                        
+                                       <img src="{%static 'images/Monitoring.jpg'%}">
+                                    </div> -->
+                                </div>
+
+                            </div>
+                            
+                            <div class="col-md-3 col-sm-6">
+                                <div id="site-visits" class="dash-widget-item" style="background-color: rgb(139,195,74) ">
+                                    <div class="dash-widget-header">
+                                        <div class="p-20">
+                                            <div class="dash-widget-visits"></div>
+                                        </div>
+                                        
+                                        <div class="dash-widget-title"><a href="/known" style="color:white"><small style="font-size: 14px">Identified Faces</small></a></div>
+                                        
+                                        
+                                    </div>
+                                    
+                                     <img src="{%static 'images/knownface.png'%}" style="height: 302px;width: 261px;">
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-3 col-sm-6">
+                                <div id="site-visits" class="dash-widget-item " style="background-color: rgb(255,152,0) ">
+                                    <div class="dash-widget-header">
+                                        <div class="p-20">
+                                            <div class="dash-widget-visits"></div>
+                                        </div>
+                                        
+                                        <div class="dash-widget-title"><a href="/unknown" style="color:white"><small style="font-size: 14px">Un Identified Faces</small></a></div>
+                                        
+                                       
+                                    </div>
+                                    
+                                    <img src="{%static 'images/unknown.jpg'%}" style="height: 302px;width: 261px;">
+                                </div>
+
+                            </div>
+
+                            <div class="col-md-3 col-sm-6">
+                                <div id="site-visits" class="dash-widget-item " style="background-color: rgb(96,125,139) ">
+                                    <div class="dash-widget-header">
+                                        <div class="p-20">
+                                            <div class="dash-widget-visits"></div>
+                                        </div>
+                                        
+                                        <div class="dash-widget-title"><a href="/training" style="color:white"><small style="font-size: 14px">Trained Faces</small></a></div>
+                                        
+                                      
+                                    </div>
+                                    
+                                     <img src="{%static 'images/Network-Monitoring.jpg'%}" style="height: 302px;width: 261px;">
+                                </div>
+
+                            </div>
+                            
+                            
+    
+                            
+                        </div>
+                    </div>
+
+                       
+                    
+                </div>
+
+            </section>
+        </section>
+        
+        <footer id="footer">
+            Copyright &copy; 2017 Zoom CCTV
+            
+            <ul class="f-menu">
+                <li><a href="">Home</a></li>
+                <li><a href="">Timeline</a></li>
+                <li><a href="">Reports</a></li>
+                <li><a href="">Support</a></li>
+                <li><a href="">Contact</a></li>
+            </ul>
+        </footer>
+
+        <!-- Page Loader -->
+        <div class="page-loader">
+            <div class="preloader pls-blue">
+                <svg class="pl-circular" viewBox="25 25 50 50">
+                    <circle class="plc-path" cx="50" cy="50" r="20" />
+                </svg>
+
+                <p>Please wait...</p>
+            </div>
+        </div>
+{%endblock%}
+
+        <!-- Older IE warning message -->
+        <!--[if lt IE 9]>
+            <div class="ie-warning">
+                <h1 class="c-white">Warning!!</h1>
+                <p>You are using an outdated version of Internet Explorer, please upgrade <br/>to any of the following web browsers to access this website.</p>
+                <div class="iew-container">
+                    <ul class="iew-download">
+                        <li>
+                            <a href="http://www.google.com/chrome/">
+                                <img src="img/browsers/chrome.png" alt="">
+                                <div>Chrome</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.mozilla.org/en-US/firefox/new/">
+                                <img src="img/browsers/firefox.png" alt="">
+                                <div>Firefox</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://www.opera.com">
+                                <img src="img/browsers/opera.png" alt="">
+                                <div>Opera</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.apple.com/safari/">
+                                <img src="img/browsers/safari.png" alt="">
+                                <div>Safari</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://windows.microsoft.com/en-us/internet-explorer/download-ie">
+                                <img src="img/browsers/ie.png" alt="">
+                                <div>IE (New)</div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <p>Sorry for the inconvenience!</p>
+            </div>   
+        <![endif]-->
+ 
